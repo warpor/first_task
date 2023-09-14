@@ -9,7 +9,7 @@ def test_calculate_area_int():
     assert round(area, 2) == 28.27
 
 
-def test_calculate_area_flaot():
+def test_calculate_area_float():
     figure: Circle = Circle(3.5)
     area: float = figure.calculate_area()
     assert round(area, 2) == 38.48
