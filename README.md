@@ -30,7 +30,7 @@ print(figure.check_for_rectangular())  # Проверяем, является л
 Для расширения библиотеки необходимо отнаследоваться от класса Figure и реализовать метод 
 calculate_area().
 
-###Пример
+### Пример
 
 ```python
 from figures_calculation import Figure
