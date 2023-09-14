@@ -1,6 +1,6 @@
 import pytest
 
-from figures import Circle
+from figures_calculation import Circle
 
 
 def test_calculate_area_int():

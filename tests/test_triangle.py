@@ -1,6 +1,6 @@
 import pytest
 
-from figures import Triangle
+from figures_calculation import Triangle
 
 
 def test_calculate_area_int():
