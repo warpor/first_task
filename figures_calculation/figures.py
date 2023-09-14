@@ -1,6 +1,7 @@
 import math
 from abc import ABC, abstractmethod
-from typing import List
+from builtins import int
+from typing import List, Union
 
 
 class Figure(ABC):
@@ -9,7 +10,7 @@ class Figure(ABC):
     def calculate_area(self) -> float:
         pass
 
-    def _check_values(self, value):
+    def _check_values(self, value: Union[float, int]):
         if type(value) not in (float, int):
             raise TypeError("Values must be integers or float")
         if value <= 0:
@@ -23,8 +24,7 @@ class Circle(Figure):
         self.radius: float = self._check_values(radius)
 
     def calculate_area(self) -> float:
-        area: float = math.pi * (self.radius ** 2)
-        return area
+        return math.pi * (self.radius ** 2)
 
 
 class Triangle(Figure):
@@ -40,15 +40,12 @@ class Triangle(Figure):
         first_component: float = half_perimeter - self.side_a
         second_component: float = half_perimeter - self.side_b
         third_component: float = half_perimeter - self.side_c
-        area: float = (half_perimeter * first_component * second_component
-                       * third_component) ** 0.5
-        return area
+        return (half_perimeter * first_component * second_component
+                * third_component) ** 0.5
 
     def check_for_rectangular(self) -> bool:
         sorted_sides: List[float] = sorted([self.side_a, self.side_b, self.side_c])
-        if sorted_sides[2] ** 2 == sorted_sides[0] ** 2 + sorted_sides[1] ** 2:
-            return True
-        return False
+        return sorted_sides[2] ** 2 == sorted_sides[0] ** 2 + sorted_sides[1] ** 2
 
     def __calculate_half_perimeter(self) -> float:
         return (self.side_a + self.side_b + self.side_c) / 2
