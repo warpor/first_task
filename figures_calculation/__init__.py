@@ -1,3 +1,3 @@
-from .figures import Triangle, Circle
+from .figures import Triangle, Circle, Figure
 
-__all__ = ["Triangle", "Circle"]
+__all__ = ["Triangle", "Circle", "Figure"]
