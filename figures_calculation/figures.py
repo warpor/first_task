@@ -23,7 +23,7 @@ class Circle(Figure):
         self.radius: float = self._check_values(radius)
 
     def calculate_area(self) -> float:
-        area: float = 2 * math.pi * (self.radius ** 2)
+        area: float = math.pi * (self.radius ** 2)
         return area
 
 
